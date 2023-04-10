@@ -27,6 +27,7 @@ def determine_no_of_clusters_elbow(data) :
     noOfIterations = []
     countOfCluster = range(1,10)
     for k in countOfCluster:
+        
         kmeanElbowModel = TimeSeriesKMeans(n_clusters=k, metric = 'euclidean', random_state=1) #metric = 'dtw'
         kmeanElbowModel.fit_predict(data)
         withinClusterSumOfSqr.append(kmeanElbowModel.inertia_)
